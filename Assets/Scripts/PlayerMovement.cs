@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -8,8 +9,7 @@ public class PlayerMovement : MonoBehaviour
     private Animator animator;
     public float speed = 7f;
     private Vector2 moveSpeed = Vector2.zero;
-    [HideInInspector]
-    public float moveInput = 0f;
+    private float moveInput = 0f;
     public float flipDelay = .2f;
     private bool facingRight = true;
     public uint airControl = 20;
@@ -82,12 +82,18 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("isWalking", true);
         }
 
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if (Input.GetButtonDown("Jump"))
+            JumpCheck();
+            
+    }
+
+    public void JumpCheck()
+    {
+        if (isGrounded)
         {
             animator.SetTrigger("takeOff");
             StartCoroutine("Jump");
         }
-            
     }
 
     IEnumerator Jump()
