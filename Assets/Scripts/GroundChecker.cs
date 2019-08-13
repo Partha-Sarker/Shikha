@@ -21,7 +21,7 @@ public class GroundChecker : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        if (other.gameObject.tag == "ground")
         {
             playerMovement.isGrounded = false;
         }

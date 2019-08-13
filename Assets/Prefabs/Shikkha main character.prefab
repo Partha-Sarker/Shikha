@@ -343,8 +343,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  moveInput: 0
-  flipDelay: 0.1
+  flipDelay: 0
   airControl: 10
   jumpForce: 10
   jumpDelay: 0.05

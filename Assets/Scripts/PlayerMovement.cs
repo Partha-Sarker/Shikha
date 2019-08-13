@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -15,9 +14,14 @@ public class PlayerMovement : MonoBehaviour
     public uint airControl = 20;
     public float jumpForce = 5f;
     public float jumpDelay = .1f;
+    [HideInInspector]
+    public GameObject box;
     public bool isGrounded = true;
+    public bool isPushing = false;
     public LayerMask whatIsGround;
     private TouchManager touchManager;
+    public Vector2 colliderSize;
+    public bool canPush = false;
 
     // Start is called before the first frame update
     void Start()
@@ -27,9 +31,49 @@ public class PlayerMovement : MonoBehaviour
         touchManager = FindObjectOfType<TouchManager>();
     }
 
+    void Update()
+    {
+
+        moveInput = Input.GetAxis("Horizontal");
+        //moveInput = touchManager.input;
+
+        animator.SetFloat("HSpeed", moveInput);
+
+        if (moveInput == 0 || !isGrounded)
+        {
+            animator.SetBool("isWalking", false);
+        }
+        else
+        {
+            animator.SetBool("isWalking", true);
+        }
+
+        if (Input.GetKeyDown(KeyCode.E) && isPushing)
+        {
+            DisableBoxJoint();
+        }
+        else if (Input.GetKeyDown(KeyCode.E) && canPush)
+        {
+            EnableBoxJoint();
+        }
+
+        
+
+        if (Input.GetButtonDown("Jump"))
+        {
+            DisableBoxJoint();
+            JumpCheck();
+        }
+            
+
+    }
+
+
     void FixedUpdate()
     {
         Vector2 velocity = rb.velocity;
+        Vector2 position = new Vector2(transform.position.x, transform.position.y);
+        isGrounded = Physics2D.OverlapBox(position, colliderSize, 0, whatIsGround);
 
         if (isGrounded)
         {
@@ -37,6 +81,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
+            DisableBoxJoint();
             animator.SetBool("isJumping", true);
         }
 
@@ -50,14 +95,14 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(force);
         }
 
-        if (facingRight == false && rb.velocity.x > 0)
+        if (facingRight == false && rb.velocity.x > 0 && !isPushing)
         {
             if (flipDelay > 0)
                 StartCoroutine("Flip");
             else
                 FlipNow();
         }
-        else if (facingRight == true && rb.velocity.x < 0)
+        else if (facingRight == true && rb.velocity.x < 0 && !isPushing)
         {
             if (flipDelay > 0)
                 StartCoroutine("Flip");
@@ -66,30 +111,35 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void Update()
+    void EnableBoxJoint()
     {
-
-        //moveInput = Input.GetAxis("Horizontal");
-        moveInput = touchManager.input;
-        animator.SetFloat("HSpeed", moveInput);
-
-        if (moveInput == 0 || !isGrounded)
+        if (box != null)
         {
-            animator.SetBool("isWalking", false);
+            DistanceJoint2D boxJoint = box.GetComponent<DistanceJoint2D>();
+            boxJoint.enabled = true;
+            Rigidbody2D boxRb = box.GetComponent<Rigidbody2D>();
+            boxRb.gravityScale = 2;
         }
-        else
-        {
-            animator.SetBool("isWalking", true);
-        }
+        isPushing = true;
+        animator.SetBool("isPushing", isPushing);
+    }
 
-        if (Input.GetButtonDown("Jump"))
-            JumpCheck();
-            
+    void DisableBoxJoint()
+    {
+        if (box != null)
+        {
+            DistanceJoint2D boxJoint = box.GetComponent<DistanceJoint2D>();
+            boxJoint.enabled = false;
+            Rigidbody2D boxRb = box.GetComponent<Rigidbody2D>();
+            boxRb.gravityScale = 20;
+        }
+        isPushing = false;
+        animator.SetBool("isPushing", isPushing);
     }
 
     public void JumpCheck()
     {
-        if (isGrounded)
+        if (isGrounded && !isPushing)
         {
             animator.SetTrigger("takeOff");
             StartCoroutine("Jump");
