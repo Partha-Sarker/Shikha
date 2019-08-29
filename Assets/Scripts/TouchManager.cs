@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class TouchManager : MonoBehaviour
 {
@@ -19,10 +18,12 @@ public class TouchManager : MonoBehaviour
     [SerializeField]
     private float minSwipeDistance = 50;
     [SerializeField]
-    private float maxSwipeTime = 1f;
+    private float maxSwipeTime = .25f;
     private float swipeStartTime;
     private Vector2 swipeStartPos;
     private PlayerMovement playerMovement;
+    public bool isHolding = false;
+    [HideInInspector]
 
 
     // Start is called before the first frame update
@@ -42,15 +43,21 @@ public class TouchManager : MonoBehaviour
         {
             Touch touch = Input.touches[i];
 
-            ConfigureMovementTouch(touch, i);
+            ConfigureMovementTouch(touch, touch.fingerId);
             
-            ConfigureActionTouch(touch, i);
-
+            ConfigureActionTouch(touch, touch.fingerId);
+            
         }
 
-        if(touchCount == 0)
+        if (touchCount == 0)
         {
             movementTouchIndex = actionTouchIndex = -1;
+            input = 0;
+            if (!isHolding)
+            {
+                isHolding = false;
+                playerMovement.DisableBoxJoint();
+            }
         }
     }
 
@@ -92,15 +99,27 @@ public class TouchManager : MonoBehaviour
             swipeStartPos = touch.position;
             swipeStartTime = Time.time;
         }
+        else if (i == actionTouchIndex && (touch.phase == TouchPhase.Stationary || touch.phase == TouchPhase.Moved) && isHolding == false)
+        {
+            float timeDifference = Time.time - swipeStartTime;
+            if(timeDifference > maxSwipeTime)
+            {
+                isHolding = true;
+                playerMovement.PushPull();
+            }
+        }
         else if (i == actionTouchIndex && (touch.phase == TouchPhase.Ended || touch.phase == TouchPhase.Canceled))
         {
             actionTouchIndex = -1;
             float timeDifference = Time.time - swipeStartTime;
             Vector2 endPos = touch.position;
             float distance = Vector2.Distance(swipeStartPos, endPos);
-            print("delta time = " + timeDifference + " | distance = " + distance);
-            if (timeDifference > maxSwipeTime || distance < minSwipeDistance)
+            if (isHolding)
+            {
+                isHolding = false;
+                playerMovement.PushPull();
                 return;
+            }
             CheckSwipe(swipeStartPos, endPos);
         }
 

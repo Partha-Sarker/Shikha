@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-
+    public bool touchInput = false;
     private Rigidbody2D rb;
     private Animator animator;
     public float speed = 7f;
@@ -33,9 +33,10 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-
-        moveInput = Input.GetAxis("Horizontal");
-        //moveInput = touchManager.input;
+        if(touchInput)
+            moveInput = touchManager.input;
+        else
+            moveInput = Input.GetAxis("Horizontal");
 
         animator.SetFloat("HSpeed", moveInput);
 
@@ -48,13 +49,9 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("isWalking", true);
         }
 
-        if (Input.GetKeyDown(KeyCode.E) && isPushing)
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            DisableBoxJoint();
-        }
-        else if (Input.GetKeyDown(KeyCode.E) && canPush)
-        {
-            EnableBoxJoint();
+            PushPull();
         }
 
         
@@ -67,8 +64,7 @@ public class PlayerMovement : MonoBehaviour
             
 
     }
-
-
+    
     void FixedUpdate()
     {
         Vector2 velocity = rb.velocity;
@@ -111,7 +107,15 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void EnableBoxJoint()
+    public void PushPull()
+    {
+        if (isPushing)
+            DisableBoxJoint();
+        else if (canPush)
+            EnableBoxJoint();
+    }
+
+    public void EnableBoxJoint()
     {
         if (box != null)
         {
@@ -124,7 +128,7 @@ public class PlayerMovement : MonoBehaviour
         animator.SetBool("isPushing", isPushing);
     }
 
-    void DisableBoxJoint()
+    public void DisableBoxJoint()
     {
         if (box != null)
         {
