@@ -40,6 +40,7 @@ public class PushableBox : MonoBehaviour
         if (collision.tag != "Player")
             return;
         checkPush = true;
+        rb.bodyType = RigidbodyType2D.Kinematic;
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -47,6 +48,7 @@ public class PushableBox : MonoBehaviour
         if (collision.tag != "Player")
             return;
         checkPush = false;
+        rb.bodyType = RigidbodyType2D.Dynamic;
         DisableJoint();
     }
 
@@ -63,7 +65,7 @@ public class PushableBox : MonoBehaviour
         playerMovement.canPush = false;
         joint.enabled = false;
         playerMovement.box = null;
-        rb.gravityScale = 20;
+        //rb.gravityScale = 20;
     }
 
 }

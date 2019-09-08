@@ -2,6 +2,8 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - GroundChecker
+    - Parallax
+    - PlayerFollow
     - PlayerMovement
     - PushableBox
     - TouchManager
@@ -68,6 +70,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 13518}
     - Class: 114
       Script: {instanceID: 14052}
+    - Class: 114
+      Script: {instanceID: 21562}
+    - Class: 114
+      Script: {instanceID: 22006}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -727,6 +733,18 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 3d835868ad1fbf187da3944eb4416520
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Parallax
+  - hash:
+      serializedVersion: 2
+      Hash: 65b3a3b9a7779d539ec75a3ceddebdba
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerFollow
   platform: 13
   scenePathNames:
   - Assets/Scenes/test.unity

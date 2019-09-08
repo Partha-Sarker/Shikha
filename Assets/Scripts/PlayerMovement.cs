@@ -122,7 +122,8 @@ public class PlayerMovement : MonoBehaviour
             DistanceJoint2D boxJoint = box.GetComponent<DistanceJoint2D>();
             boxJoint.enabled = true;
             Rigidbody2D boxRb = box.GetComponent<Rigidbody2D>();
-            boxRb.gravityScale = 2;
+            boxRb.bodyType = RigidbodyType2D.Dynamic;
+            //boxRb.gravityScale = 2;
         }
         isPushing = true;
         animator.SetBool("isPushing", isPushing);
@@ -135,7 +136,8 @@ public class PlayerMovement : MonoBehaviour
             DistanceJoint2D boxJoint = box.GetComponent<DistanceJoint2D>();
             boxJoint.enabled = false;
             Rigidbody2D boxRb = box.GetComponent<Rigidbody2D>();
-            boxRb.gravityScale = 20;
+            boxRb.bodyType = RigidbodyType2D.Kinematic;
+            //boxRb.gravityScale = 20;
         }
         isPushing = false;
         animator.SetBool("isPushing", isPushing);
