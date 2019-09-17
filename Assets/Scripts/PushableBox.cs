@@ -7,7 +7,6 @@ public class PushableBox : MonoBehaviour
     private DistanceJoint2D joint;
     private Rigidbody2D rb;
     private bool checkPush = false;
-    //[SerializeField]
     private bool facingPlayer = false;
 
     private void Start()
