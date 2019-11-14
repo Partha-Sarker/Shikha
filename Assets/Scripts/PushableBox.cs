@@ -39,7 +39,7 @@ public class PushableBox : MonoBehaviour
         if (collision.tag != "Player")
             return;
         checkPush = true;
-        rb.bodyType = RigidbodyType2D.Kinematic;
+        rb.bodyType = RigidbodyType2D.Static;
     }
 
     private void OnTriggerExit2D(Collider2D collision)

@@ -136,7 +136,7 @@ public class PlayerMovement : MonoBehaviour
             DistanceJoint2D boxJoint = box.GetComponent<DistanceJoint2D>();
             boxJoint.enabled = false;
             Rigidbody2D boxRb = box.GetComponent<Rigidbody2D>();
-            boxRb.bodyType = RigidbodyType2D.Kinematic;
+            boxRb.bodyType = RigidbodyType2D.Static;
             //boxRb.gravityScale = 20;
         }
         isPushing = false;
