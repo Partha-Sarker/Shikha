@@ -73,23 +73,23 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 10040}
+      Script: {instanceID: 9796}
     - Class: 114
-      Script: {instanceID: 10044}
+      Script: {instanceID: 10046}
     - Class: 114
-      Script: {instanceID: 11566}
+      Script: {instanceID: 10050}
     - Class: 114
-      Script: {instanceID: 12030}
+      Script: {instanceID: 11574}
     - Class: 114
-      Script: {instanceID: 12076}
+      Script: {instanceID: 12038}
     - Class: 114
-      Script: {instanceID: 13522}
+      Script: {instanceID: 12084}
     - Class: 114
-      Script: {instanceID: 13642}
+      Script: {instanceID: 13530}
     - Class: 114
-      Script: {instanceID: 14058}
+      Script: {instanceID: 13650}
     - Class: 114
-      Script: {instanceID: 97000}
+      Script: {instanceID: 14066}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -111,6 +111,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Postprocessing.Runtime.dll
     namespaceName: UnityEngine.Rendering.PostProcessing
     className: PostProcessLayer
+  - hash:
+      serializedVersion: 2
+      Hash: af294280dd84836c36879210d255b018
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Parallax
   - hash:
       serializedVersion: 2
       Hash: 4bc4346a71a8df53a6b106f68ef3a190
@@ -261,6 +267,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: GridLayoutGroup
+  - hash:
+      serializedVersion: 2
+      Hash: 6b3d3036a89c789128042f229f57ff7d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CamerController
   - hash:
       serializedVersion: 2
       Hash: 63d7b9b64a11859f416d72ba9a3c3fec
@@ -771,19 +783,7 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 6b3d3036a89c789128042f229f57ff7d
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: CamerController
-  - hash:
-      serializedVersion: 2
-      Hash: af294280dd84836c36879210d255b018
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Parallax
   platform: 13
   scenePathNames:
   - Assets/Scenes/DemoScene.unity
-  playerPath: C:/My Files/unity projects/Shikkha/Builds/Shikkha.apk
+  playerPath: C:/My Files/unity projects/Shikkha/Builds/Shikha.apk

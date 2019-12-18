@@ -126,7 +126,7 @@ public class PlayerMovement : MonoBehaviour
             //boxRb.gravityScale = 2;
         }
         isPushing = true;
-        animator.SetBool("isPushing", isPushing);
+        animator.SetBool("isPushing", true);
     }
 
     public void DisableBoxJoint()
@@ -140,14 +140,13 @@ public class PlayerMovement : MonoBehaviour
             //boxRb.gravityScale = 20;
         }
         isPushing = false;
-        animator.SetBool("isPushing", isPushing);
+        animator.SetBool("isPushing", false);
     }
 
     public void JumpCheck()
     {
         if (isGrounded && !isPushing)
         {
-            animator.SetTrigger("takeOff");
             StartCoroutine("Jump");
         }
     }

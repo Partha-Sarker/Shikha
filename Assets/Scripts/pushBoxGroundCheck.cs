@@ -13,7 +13,6 @@ public class pushBoxGroundCheck : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        print("mid air");
         if (collision.gameObject.tag == "ground")
         {
             playerMovement.DisableBoxJoint();
