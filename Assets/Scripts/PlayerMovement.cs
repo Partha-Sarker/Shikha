@@ -8,7 +8,8 @@ public class PlayerMovement : MonoBehaviour
     private Animator animator;
     public float speed = 7f;
     private Vector2 moveSpeed = Vector2.zero;
-    private float moveInput = 0f;
+    [HideInInspector]
+    public float moveInput = 0f;
     public float flipDelay = .2f;
     private bool facingRight = true;
     public uint airControl = 20;

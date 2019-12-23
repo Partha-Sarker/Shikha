@@ -15,8 +15,8 @@ public class TouchManager : MonoBehaviour
     private float minInput = .4f;
     [SerializeField]
     private int actionTouchIndex = -1;
-    [SerializeField]
-    private float minSwipeDistance = 50;
+    //[SerializeField]
+    //private float minSwipeDistance = 50;
     [SerializeField]
     private float maxSwipeTime = .25f;
     private float swipeStartTime;

@@ -188,7 +188,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 807458354805189172}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.383, z: 0}
+  m_LocalPosition: {x: 0, y: 2.3869996, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5171694466503046312}
@@ -548,10 +548,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   touchInput: 0
   speed: 7
+  moveInput: 0
   flipDelay: 0
   airControl: 10
   jumpForce: 9
-  jumpDelay: 0.1
+  jumpDelay: 0
   box: {fileID: 0}
   isGrounded: 1
   isPushing: 0
@@ -749,7 +750,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4538195011949358635}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.01399016, y: 2.3628552, z: 0}
+  m_LocalPosition: {x: -0.01399016, y: 2.264, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6916358834941350550}
@@ -1321,7 +1322,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5704106131676813717}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.013990164, y: 0.253, z: 0}
+  m_LocalPosition: {x: 0.03, y: 0.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2606711976854792614}
