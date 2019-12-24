@@ -9,6 +9,7 @@ public class TouchManager : MonoBehaviour
     private int deviceHeight, deviceWidth;
     [SerializeField]
     private int minMoveAmount = 10;
+    private int minSwipeAmount;
     [HideInInspector]
     public float input = 0;
     [SerializeField]
@@ -19,11 +20,11 @@ public class TouchManager : MonoBehaviour
     //private float minSwipeDistance = 50;
     [SerializeField]
     private float maxSwipeTime = .25f;
-    private float swipeStartTime;
-    private Vector2 swipeStartPos;
+    private float touchDownTime;
+    private Vector2 touchDownPos;
     private PlayerMovement playerMovement;
     public bool isHolding = false;
-    [HideInInspector]
+    public bool isCrouching = false;
 
 
     // Start is called before the first frame update
@@ -31,6 +32,7 @@ public class TouchManager : MonoBehaviour
     {
         deviceWidth = Screen.width;
         deviceHeight = Screen.height;
+        minSwipeAmount = (int) ((float) deviceHeight / 4.5f);
         playerMovement = FindObjectOfType<PlayerMovement>();
     }
 
@@ -56,11 +58,11 @@ public class TouchManager : MonoBehaviour
             if (!isHolding)
             {
                 isHolding = false;
+                isCrouching = false;
                 playerMovement.DisableBoxJoint();
             }
         }
     }
-
 
     private void ConfigureMovementTouch(Touch touch, int i)
     {
@@ -96,42 +98,70 @@ public class TouchManager : MonoBehaviour
         if (actionTouchIndex == -1 && touch.phase == TouchPhase.Began && touch.position.x > deviceWidth / 2)
         {
             actionTouchIndex = i;
-            swipeStartPos = touch.position;
-            swipeStartTime = Time.time;
+            touchDownPos = touch.position;
+            touchDownTime = Time.time;
         }
         else if (i == actionTouchIndex && (touch.phase == TouchPhase.Stationary || touch.phase == TouchPhase.Moved) && isHolding == false)
         {
-            float timeDifference = Time.time - swipeStartTime;
-            if(timeDifference > maxSwipeTime)
+            float timeDifference = Time.time - touchDownTime;
+            if (timeDifference > maxSwipeTime)
             {
-                isHolding = true;
-                playerMovement.PushPull();
+                Vector2 touchUpPos = touch.position;
+                float distance = Vector2.Distance(touchDownPos, touchUpPos);
+                if (CheckDownSwipe(touchDownPos, touchUpPos))
+                {
+                    isCrouching = true;
+
+                }
+                else
+                {
+                    isHolding = true;
+                    playerMovement.EnableBoxJoint();
+                }
             }
         }
         else if (i == actionTouchIndex && (touch.phase == TouchPhase.Ended || touch.phase == TouchPhase.Canceled))
         {
             actionTouchIndex = -1;
-            float timeDifference = Time.time - swipeStartTime;
-            Vector2 endPos = touch.position;
-            float distance = Vector2.Distance(swipeStartPos, endPos);
+            Vector2 touchUpPos = touch.position;
+            float distance = Vector2.Distance(touchDownPos, touchUpPos);
             if (isHolding)
             {
                 isHolding = false;
-                playerMovement.PushPull();
+                playerMovement.DisableBoxJoint();
                 return;
             }
-            CheckSwipe(swipeStartPos, endPos);
+            if (isCrouching)
+            {
+                isCrouching = false;
+                return;
+            }
+            CheckUpSwipe(touchDownPos, touchUpPos);
         }
 
     }
 
-    private void CheckSwipe(Vector2 swipeStartPos, Vector2 endPos)
+    private void CheckUpSwipe(Vector2 swipeStartPos, Vector2 touchUpPos)
     {
-        Vector2 diff = endPos - swipeStartPos;
+        Vector2 diff = touchUpPos - swipeStartPos;
         float angle = Vector2.Angle(Vector2.right, diff);
-        if(diff.y > 0 && angle > 45 && angle < 135)
+        if(diff.y > minSwipeAmount && angle > 60 && angle < 120)
         {
-            playerMovement.JumpCheck();
+            playerMovement.Jump();
         }
+    }
+
+    private bool CheckDownSwipe(Vector2 swipeStartPos, Vector2 touchUpPos)
+    {
+        Vector2 diff = touchUpPos - swipeStartPos;
+        float angle = Vector2.Angle(Vector2.right, diff);
+
+        if (diff.y > 0 || -diff.y < minSwipeAmount)
+            return false;
+        
+        if (angle > 60 && angle < 120)
+            return true;
+
+        return false;
     }
 }

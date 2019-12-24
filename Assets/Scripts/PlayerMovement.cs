@@ -14,11 +14,11 @@ public class PlayerMovement : MonoBehaviour
     private bool facingRight = true;
     public uint airControl = 20;
     public float jumpForce = 5f;
-    public float jumpDelay = .1f;
     [HideInInspector]
     public GameObject box;
     public bool isGrounded = true;
     public bool isPushing = false;
+    public bool isCrouching = false;
     public LayerMask whatIsGround;
     private TouchManager touchManager;
     public Vector2 colliderSize;
@@ -52,18 +52,25 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E))
         {
-            PushPull();
+            EnableBoxJoint();
         }
 
-        
+        if (Input.GetKeyUp(KeyCode.E))
+        {
+            DisableBoxJoint();
+        }
 
         if (Input.GetButtonDown("Jump"))
         {
             DisableBoxJoint();
-            JumpCheck();
+            Jump();
         }
-            
 
+        if (Input.GetKeyDown(KeyCode.C))
+            Crouch();
+
+        if (Input.GetKeyUp(KeyCode.C))
+            StandUp();
     }
     
     void FixedUpdate()
@@ -79,10 +86,15 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             DisableBoxJoint();
+            StandUp();
             animator.SetBool("isJumping", true);
         }
 
-        if (isGrounded)
+        if (isCrouching)
+        {
+            rb.velocity = new Vector2(moveInput * speed * .5f, velocity.y);
+        }
+        else if (isGrounded)
         {
             rb.velocity = new Vector2(moveInput * speed, velocity.y);
         }
@@ -108,16 +120,10 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void PushPull()
-    {
-        if (isPushing)
-            DisableBoxJoint();
-        else if (canPush)
-            EnableBoxJoint();
-    }
-
     public void EnableBoxJoint()
     {
+        if (!canPush)
+            return;
         if (box != null)
         {
             DistanceJoint2D boxJoint = box.GetComponent<DistanceJoint2D>();
@@ -132,6 +138,8 @@ public class PlayerMovement : MonoBehaviour
 
     public void DisableBoxJoint()
     {
+        if (!isPushing)
+            return;
         if (box != null)
         {
             DistanceJoint2D boxJoint = box.GetComponent<DistanceJoint2D>();
@@ -144,18 +152,26 @@ public class PlayerMovement : MonoBehaviour
         animator.SetBool("isPushing", false);
     }
 
-    public void JumpCheck()
+    public void Crouch()
     {
-        if (isGrounded && !isPushing)
-        {
-            StartCoroutine("Jump");
-        }
+        if (!isGrounded || isPushing)
+            return;
+        animator.SetBool("isCrouching", true);
+        isCrouching = true;
     }
 
-    IEnumerator Jump()
+    public void StandUp()
     {
-        yield return new WaitForSeconds(jumpDelay);
-        rb.velocity = Vector2.up * jumpForce;
+        if (!isCrouching)
+            return;
+        animator.SetBool("isCrouching", false);
+        isCrouching = false;
+    }
+
+    public void Jump()
+    {
+        if (isGrounded && !isPushing && !isCrouching)
+            rb.velocity = Vector2.up * jumpForce;
     }
 
     IEnumerator Flip()

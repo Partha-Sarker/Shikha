@@ -100,6 +100,9 @@
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/My Files/unity projects/Shikha/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Cinemachine">
+      <HintPath>C:/My Files/unity projects/Shikha/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.2D.Animation.Runtime">
       <HintPath>C:/My Files/unity projects/Shikha/Library/ScriptAssemblies/Unity.2D.Animation.Runtime.dll</HintPath>
     </Reference>
@@ -168,6 +171,9 @@
     </Reference>
     <Reference Include="Unity.2D.Animation.Editor">
       <HintPath>C:/My Files/unity projects/Shikha/Library/ScriptAssemblies/Unity.2D.Animation.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+      <HintPath>C:/My Files/unity projects/Shikha/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ShaderGraph.Editor">
       <HintPath>C:/My Files/unity projects/Shikha/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
