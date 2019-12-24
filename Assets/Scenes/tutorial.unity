@@ -1008,9 +1008,11 @@ MonoBehaviour:
   player: {fileID: 561050921}
   walkSpeed: 7
   pushPullSpeed: 4
+  crouchSpeed: 4
   jumpForce: 9
   walkAnimationSpeed: 1
   pushPullAnimationSpeed: 0.9
+  crouchAnimationSpeed: 0.65
   nextButton: {fileID: 1719297383}
   previousButton: {fileID: 1606637784}
   skipButton: {fileID: 1498501519}

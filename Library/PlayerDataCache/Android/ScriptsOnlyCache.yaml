@@ -1,6 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - CrouchTutorial
     - JumpTutorial
     - MoveTutorial
     - Parallax
@@ -28,6 +29,7 @@ ScriptsOnlyBuild:
     - UnityEngine.Experimental.Rendering.LWRP.Light2D
     - UnityEngine.Experimental.Rendering.LWRP.Renderer2DData
     - UnityEngine.Rendering.LWRP.LightweightRenderPipelineAsset
+    - UnityEngine.Rendering.LWRP.LightweightRenderPipelineEditorResources
     Unity.TextMeshPro.dll:
     - TMPro.TMP_FontAsset
     - TMPro.TMP_Settings
@@ -53,7 +55,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
   sceneClasses:
-    Assets/Scenes/test.unity:
+    Assets/Scenes/level 1.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -197,6 +199,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 14280}
     - Class: 114
       Script: {instanceID: 14370}
+    - Class: 114
+      Script: {instanceID: 31220}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -926,7 +930,7 @@ ScriptsOnlyBuild:
     className: JumpTutorial
   - hash:
       serializedVersion: 2
-      Hash: 3183998e113e1c33a449893a57e19f22
+      Hash: 351c966701bbf60ec488086dc3a6b744
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TutorialManager
@@ -1146,8 +1150,14 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CrouchTutorial
   platform: 13
   scenePathNames:
   - Assets/Scenes/tutorial.unity
-  - Assets/Scenes/test.unity
+  - Assets/Scenes/level 1.unity
   playerPath: C:/My Files/unity projects/Shikha/Builds/Shikha.apk

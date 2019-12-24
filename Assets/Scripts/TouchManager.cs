@@ -111,7 +111,7 @@ public class TouchManager : MonoBehaviour
                 if (CheckDownSwipe(touchDownPos, touchUpPos))
                 {
                     isCrouching = true;
-
+                    playerMovement.Crouch();
                 }
                 else
                 {
@@ -134,6 +134,7 @@ public class TouchManager : MonoBehaviour
             if (isCrouching)
             {
                 isCrouching = false;
+                playerMovement.StandUp();
                 return;
             }
             CheckUpSwipe(touchDownPos, touchUpPos);

@@ -9,10 +9,12 @@ public class TutorialManager : MonoBehaviour
 
     public int walkSpeed = 7;
     public int pushPullSpeed = 4;
+    public int crouchSpeed = 4;
     public int jumpForce = 9;
 
     public float walkAnimationSpeed = 1;
     public float pushPullAnimationSpeed = .75f;
+    public float crouchAnimationSpeed = .75f;
 
     private Rigidbody2D playerRB;
     private Vector2 initialPlayerPosition;
@@ -69,6 +71,24 @@ public class TutorialManager : MonoBehaviour
         playerAnimator.SetBool("isWalking", true);
     }
 
+    public void CrouchForward()
+    {
+        playerRB.velocity = new Vector2(crouchSpeed, 0);
+        playerAnimator.SetFloat("HSpeed", crouchAnimationSpeed);
+        playerAnimator.SetBool("isWalking", true);
+    }
+
+    public void CrouchBackward()
+    {
+        Vector3 scaler = player.localScale;
+        scaler.x *= -1;
+        player.localScale = scaler;
+
+        playerRB.velocity = new Vector2(-crouchSpeed, 0);
+        playerAnimator.SetFloat("HSpeed", crouchAnimationSpeed);
+        playerAnimator.SetBool("isWalking", true);
+    }
+
     public void StopMovement()
     {
         playerRB.velocity = new Vector2(0, 0);
@@ -83,6 +103,25 @@ public class TutorialManager : MonoBehaviour
 
     }
 
+    public void HoldBox()
+    {
+        DistanceJoint2D boxJoint = box.GetComponent<DistanceJoint2D>();
+        boxJoint.enabled = true;
+        Rigidbody2D boxRb = box.GetComponent<Rigidbody2D>();
+        boxRb.bodyType = RigidbodyType2D.Dynamic;
+        playerAnimator.SetBool("isPushing", true);
+    }
+
+    public void Crouch()
+    {
+        playerAnimator.SetBool("isCrouching", true);
+    }
+
+    public void StandUp()
+    {
+        playerAnimator.SetBool("isCrouching", false);
+    }
+
     public void ResetPlayer()
     {
         playerRB.velocity = new Vector2(0, 0);
@@ -90,6 +129,7 @@ public class TutorialManager : MonoBehaviour
         playerAnimator.SetBool("isWalking", false);
         playerAnimator.SetBool("isJumping", false);
         playerAnimator.SetBool("isPushing", false);
+        playerAnimator.SetBool("isCrouching", false);
 
         box.transform.position = initialBoxPosition;
         player.position = initialPlayerPosition;
@@ -121,6 +161,17 @@ public class TutorialManager : MonoBehaviour
     }
 
     public void OnPushPullTutorialEnd()
+    {
+        if (!previousButton.IsInteractable())
+        {
+            EnablePreviousButton();
+            EnableNextButton();
+        }
+
+        ResetPlayer();
+    }
+
+    public void OnCrouchTutorialEnd()
     {
         if (!previousButton.IsInteractable())
             EnablePreviousButton();
@@ -193,15 +244,6 @@ public class TutorialManager : MonoBehaviour
     public void DisableBox()
     {
         box.SetActive(false);
-    }
-
-    public void ActiveBoxJoint()
-    {
-        DistanceJoint2D boxJoint = box.GetComponent<DistanceJoint2D>();
-        boxJoint.enabled = true;
-        Rigidbody2D boxRb = box.GetComponent<Rigidbody2D>();
-        boxRb.bodyType = RigidbodyType2D.Dynamic;
-        playerAnimator.SetBool("isPushing", true);
     }
 
 }

@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Free Asset - 2D Handcrafted Art\Scripts\CamerController.cs" />
+    <Compile Include="Assets\Scripts\Animation scripts\CrouchTutorial.cs" />
     <Compile Include="Assets\Scripts\Animation scripts\JumpTutorial.cs" />
     <Compile Include="Assets\Scripts\Animation scripts\MoveTutorial.cs" />
     <Compile Include="Assets\Scripts\Animation scripts\PushPullTutorial.cs" />
