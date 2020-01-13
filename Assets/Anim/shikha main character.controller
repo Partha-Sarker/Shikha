@@ -330,6 +330,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: isWalking
     m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: isJumping
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -6519142001852221549}
   m_Solo: 0
@@ -1585,7 +1588,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: walk
-  m_Speed: 2.2
+  m_Speed: 2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -6526909451864078234}

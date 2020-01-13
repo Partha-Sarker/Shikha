@@ -39,7 +39,10 @@ public class PlayerMovement : MonoBehaviour
         else
             moveInput = Input.GetAxis("Horizontal");
 
-        animator.SetFloat("HSpeed", moveInput);
+        if (isPushing && !facingRight)
+            animator.SetFloat("HSpeed", -moveInput);
+        else
+            animator.SetFloat("HSpeed", moveInput);
 
         if (moveInput == 0 || !isGrounded)
         {
@@ -104,14 +107,14 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(force);
         }
 
-        if (facingRight == false && rb.velocity.x > 0 && !isPushing)
+        if (!facingRight && rb.velocity.x > 0 && !isPushing)
         {
             if (flipDelay > 0)
                 StartCoroutine("Flip");
             else
                 FlipNow();
         }
-        else if (facingRight == true && rb.velocity.x < 0 && !isPushing)
+        else if (facingRight && rb.velocity.x < 0 && !isPushing)
         {
             if (flipDelay > 0)
                 StartCoroutine("Flip");

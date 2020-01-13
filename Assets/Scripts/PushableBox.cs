@@ -6,8 +6,13 @@ public class PushableBox : MonoBehaviour
     private PlayerMovement playerMovement;
     private DistanceJoint2D joint;
     private Rigidbody2D rb;
-    private bool checkPush = false;
+    public bool checkPush = false;
     private bool facingPlayer = false;
+    private bool isGrounded;
+    [SerializeField]
+    private Vector2 colliderSize;
+    [SerializeField]
+    private LayerMask whatIsGround;
 
     private void Start()
     {
@@ -19,6 +24,13 @@ public class PushableBox : MonoBehaviour
 
     private void Update()
     {
+        isGrounded = Physics2D.OverlapBox(transform.position, colliderSize, 0, whatIsGround);
+        if (!isGrounded && checkPush)
+        {
+            playerMovement.DisableBoxJoint();
+            rb.bodyType = RigidbodyType2D.Dynamic;
+        }
+
         if (checkPush)
         {
             float distance = transform.position.x - Player.transform.position.x;
@@ -48,7 +60,7 @@ public class PushableBox : MonoBehaviour
             return;
         checkPush = false;
         rb.bodyType = RigidbodyType2D.Dynamic;
-        DisableJoint();
+        //DisableJoint();
     }
 
     private void EnableJoint()

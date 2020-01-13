@@ -497,7 +497,7 @@ Rigidbody2D:
   m_Material: {fileID: 6200000, guid: f5dc0968863888f42afacbe22076e901, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 4
 --- !u!70 &5003477886944445147
 CapsuleCollider2D:
@@ -547,15 +547,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   touchInput: 0
-  speed: 7
+  speed: 5
   moveInput: 0
   flipDelay: 0
   airControl: 10
   jumpForce: 9
-  jumpDelay: 0
   box: {fileID: 0}
   isGrounded: 1
   isPushing: 0
+  isCrouching: 0
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class Parallax : MonoBehaviour
 {
@@ -14,7 +15,8 @@ public class Parallax : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        cam = Camera.main.gameObject;
+        //cam = Camera.main.gameObject;
+        cam = FindObjectOfType<CinemachineVirtualCamera>().gameObject;
         startPos = transform.position.x;
         cameraPos = cam.transform.position.x;
     }

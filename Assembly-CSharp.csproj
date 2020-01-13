@@ -67,13 +67,16 @@
     <Compile Include="Assets\Scripts\Animation scripts\JumpTutorial.cs" />
     <Compile Include="Assets\Scripts\Animation scripts\MoveTutorial.cs" />
     <Compile Include="Assets\Scripts\Animation scripts\PushPullTutorial.cs" />
+    <Compile Include="Assets\Scripts\GamaManager.cs" />
     <Compile Include="Assets\Scripts\GroundChecker.cs" />
+    <Compile Include="Assets\Scripts\GundaMovement.cs" />
     <Compile Include="Assets\Scripts\InfiniteParallax.cs" />
     <Compile Include="Assets\Scripts\Parallax.cs" />
+    <Compile Include="Assets\Scripts\PlayerCheck.cs" />
     <Compile Include="Assets\Scripts\PlayerFollow.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\PushableBox.cs" />
-    <Compile Include="Assets\Scripts\pushBoxGroundCheck.cs" />
+    <Compile Include="Assets\Scripts\PushBoxGroundCheck.cs" />
     <Compile Include="Assets\Scripts\SimpleCameraController.cs" />
     <Compile Include="Assets\Scripts\TouchManager.cs" />
     <Compile Include="Assets\Scripts\TutorialManager.cs" />

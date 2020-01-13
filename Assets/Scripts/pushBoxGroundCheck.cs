@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class pushBoxGroundCheck : MonoBehaviour
+public class PushBoxGroundCheck : MonoBehaviour
 {
     private PlayerMovement playerMovement;
+    [SerializeField]
+    private Rigidbody2D boxRB;
 
     private void Start()
     {
@@ -16,6 +18,7 @@ public class pushBoxGroundCheck : MonoBehaviour
         if (collision.gameObject.tag == "ground")
         {
             playerMovement.DisableBoxJoint();
+            //boxRB.bodyType = RigidbodyType2D.Dynamic;
         }
     }
 }
