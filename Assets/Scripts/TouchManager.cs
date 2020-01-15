@@ -34,6 +34,7 @@ public class TouchManager : MonoBehaviour
         deviceHeight = Screen.height;
         minSwipeAmount = (int) ((float) deviceHeight / 4.5f);
         playerMovement = FindObjectOfType<PlayerMovement>();
+        playerMovement.touchInput = true;
     }
 
     // Update is called once per frame

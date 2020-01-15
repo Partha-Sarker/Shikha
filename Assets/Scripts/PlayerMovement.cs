@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [HideInInspector]
     public bool touchInput = false;
     private Rigidbody2D rb;
     private Animator animator;

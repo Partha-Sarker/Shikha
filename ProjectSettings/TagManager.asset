@@ -6,6 +6,9 @@ TagManager:
   tags:
   - pullable
   - ground
+  - gunda
+  - item
+  - executable object
   layers:
   - Default
   - TransparentFX

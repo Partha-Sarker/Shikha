@@ -1819,9 +1819,10 @@ GameObject:
   - component: {fileID: 2145788801517409716}
   - component: {fileID: 5272033704093561745}
   - component: {fileID: 162671043075869881}
+  - component: {fileID: 2145788801517409720}
   m_Layer: 0
-  m_Name: gunda
-  m_TagString: Untagged
+  m_Name: gunda original
+  m_TagString: gunda
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1898,6 +1899,20 @@ CapsuleCollider2D:
   m_Offset: {x: -0.025472641, y: 2.5218143}
   m_Size: {x: 0.856617, y: 5.0247135}
   m_Direction: 0
+--- !u!114 &2145788801517409720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8831308954583593491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 305d4d43c6220fa4bb3c63631cf0ac32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocity: 5
+  facingRight: 1
 --- !u!1 &8917580764118938977
 GameObject:
   m_ObjectHideFlags: 0

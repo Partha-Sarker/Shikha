@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class PushableBox : MonoBehaviour
+public class PushableBox : MonoBehaviour, IExecutableObject
 {
     private GameObject Player;
     private PlayerMovement playerMovement;
@@ -79,4 +79,8 @@ public class PushableBox : MonoBehaviour
         //rb.gravityScale = 20;
     }
 
+    public void Execute(string itemName)
+    {
+        print(itemName + " is breaking the box");
+    }
 }
