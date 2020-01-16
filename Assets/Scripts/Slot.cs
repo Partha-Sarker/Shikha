@@ -4,22 +4,21 @@ using UnityEngine.UI;
 
 public class Slot : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragHandler
 {
-    private HorizontalLayoutGroup layoutGroup;
+    public static HorizontalLayoutGroup layoutGroup;
+    public static Camera cam;
+    public static Transform player;
+    public static Vector2 offset;
+    public static TouchManager touchManager;
+    public static RectTransform rectTransform;
+
     public GameObject item;
     private GameObject tempItem;
-    private Camera cam;
     private Vector2 mousePos;
-    private TouchManager touchManager;
-    private RectTransform rectTransform;
     public IExecutableObject executableObject;
 
     // Start is called before the first frame update
     void Start()
     {
-        layoutGroup = GetComponentInParent<HorizontalLayoutGroup>();
-        rectTransform = layoutGroup.GetComponent<RectTransform>();
-        cam = Camera.main;
-        touchManager = FindObjectOfType<TouchManager>();
         RefreshLayout();
     }
 
@@ -52,9 +51,12 @@ public class Slot : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragHand
         {
             executableObject.Execute(transform.name);
             Destroy(tempItem.gameObject);
+            Destroy(this.gameObject);
             RefreshLayout();
             return;
         }
+
+        tempItem.transform.position = (Vector2)player.position + offset;
 
         Destroy(this.gameObject);
         if(touchManager != null)

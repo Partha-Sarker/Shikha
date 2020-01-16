@@ -3,18 +3,17 @@ using UnityEngine;
 
 public class Pickable : MonoBehaviour
 {
-    private TouchManager touchManager;
+    public static TouchManager touchManager;
+    public static Transform slotUI;
+
     private string name;
     private Sprite sprite;
-    private Transform slotUI;
     public GameObject slot;
     [HideInInspector]
     public Slot tempSlot;
 
     private void Start()
     {
-        slotUI = FindObjectOfType<HorizontalLayoutGroup>().transform;
-        touchManager = FindObjectOfType<TouchManager>();
         sprite = GetComponent<SpriteRenderer>().sprite;
         name = transform.name;
     }

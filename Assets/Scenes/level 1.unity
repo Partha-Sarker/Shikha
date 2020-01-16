@@ -899,8 +899,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 569136383}
-  - component: {fileID: 569136382}
   - component: {fileID: 569136381}
+  - component: {fileID: 569136382}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -939,6 +939,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1103882224}
+  layoutGroup: {fileID: 1225025489}
+  offset: {x: 0, y: 2}
+  touchManager: {fileID: 649433504}
 --- !u!4 &569136383
 Transform:
   m_ObjectHideFlags: 0
