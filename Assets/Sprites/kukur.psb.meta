@@ -31,7 +31,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 100
+    spritePixelsToUnits: 700
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -88,8 +88,8 @@ ScriptedImporter:
   rigSpriteImportData:
   - name: back front lower leg
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.14567028, y: 0.84480435}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -107,11 +107,11 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -232, y: -174}
+    uvTransform: {x: -320, y: 1155}
   - name: back front upper leg
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.5, y: 0.8}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -129,11 +129,11 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -1113, y: -552}
+    uvTransform: {x: -1200, y: 783}
   - name: front front upper leg
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.7267343, y: 0.8058567}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -151,15 +151,15 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 303, y: -1587}
+    uvTransform: {x: 216, y: -252}
   - name: front front lower leg
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.2704248, y: 0.8646596}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 1920
+      x: 2125
       y: 1155
       width: 200
       height: 343
@@ -173,11 +173,11 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 39, y: -172}
+    uvTransform: {x: 156, y: 1155}
   - name: mouth
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.52435774, y: 0.66080093}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -195,7 +195,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -669, y: -1891}
+    uvTransform: {x: -756, y: -556}
   - name: eye
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -203,8 +203,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 1920
-      y: 1506
+      x: 1918
+      y: 1498
       width: 55
       height: 55
     spriteID: 31bb6b0092961c241abdb52f7166c1bc
@@ -217,11 +217,11 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -999, y: -1556}
+    uvTransform: {x: -1088, y: -229}
   - name: body
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.15286337, y: 0.30201343}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -239,11 +239,11 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -1019, y: -2137}
+    uvTransform: {x: -1106, y: -802}
   - name: tail
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.8044038, y: 0.9286625}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -261,15 +261,15 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 2711, y: -1634}
+    uvTransform: {x: 2624, y: -299}
   - name: back back lower leg
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.13254695, y: 0.84480435}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 1433
+      x: 1432
       y: 1155
       width: 479
       height: 474
@@ -283,11 +283,11 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 105, y: -174}
+    uvTransform: {x: 16, y: 1155}
   - name: back back upper leg
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.5, y: 0.8}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -305,11 +305,11 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -792, y: -552}
+    uvTransform: {x: -879, y: 783}
   - name: front back upper leg
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.7348791, y: 0.80400825}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -327,15 +327,15 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 828, y: -1587}
+    uvTransform: {x: 741, y: -252}
   - name: front back lower leg
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.24667603, y: 0.8692755}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 2128
+      x: 1918
       y: 1155
       width: 200
       height: 343
@@ -349,8 +349,19 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 116, y: -172}
-  platformSettings: []
+    uvTransform: {x: -182, y: 1155}
+  platformSettings:
+  - name: Default
+    overridden: 1
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
   mosaicLayers: 1
   documentPivot: {x: 0, y: 0}
   documentAlignment: 7
@@ -395,7 +406,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: 225b8946192212e4eaaca273c8b3f260
     layerID: 8
-    mosaicPosition: {x: 1920, y: 1155}
+    mosaicPosition: {x: 2125, y: 1155}
   - name: mouth
     spriteName: mouth
     isGroup: 0
@@ -409,7 +420,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: 31bb6b0092961c241abdb52f7166c1bc
     layerID: 43
-    mosaicPosition: {x: 1920, y: 1506}
+    mosaicPosition: {x: 1918, y: 1498}
   - name: body
     spriteName: body
     isGroup: 0
@@ -430,7 +441,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: 3a22cc25f41f5d64fac3f55f7414ce1a
     layerID: 42
-    mosaicPosition: {x: 1433, y: 1155}
+    mosaicPosition: {x: 1432, y: 1155}
   - name: back back upper leg
     spriteName: back back upper leg
     isGroup: 0
@@ -451,7 +462,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: 43aab50a02904c348ad8301d85f17370
     layerID: 39
-    mosaicPosition: {x: 2128, y: 1155}
+    mosaicPosition: {x: 1918, y: 1155}
   characterData:
     bones: []
     parts: []

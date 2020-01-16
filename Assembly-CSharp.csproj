@@ -70,10 +70,10 @@
     <Compile Include="Assets\Scripts\Box.cs" />
     <Compile Include="Assets\Scripts\GamaManager.cs" />
     <Compile Include="Assets\Scripts\GroundChecker.cs" />
-    <Compile Include="Assets\Scripts\GundaMovement.cs" />
     <Compile Include="Assets\Scripts\IExecutableObject.cs" />
     <Compile Include="Assets\Scripts\InfiniteParallax.cs" />
     <Compile Include="Assets\Scripts\Inventory.cs" />
+    <Compile Include="Assets\Scripts\NPCMovement.cs" />
     <Compile Include="Assets\Scripts\Parallax.cs" />
     <Compile Include="Assets\Scripts\Pickable.cs" />
     <Compile Include="Assets\Scripts\PlayerCheck.cs" />
@@ -83,6 +83,7 @@
     <Compile Include="Assets\Scripts\PushBoxGroundCheck.cs" />
     <Compile Include="Assets\Scripts\SimpleCameraController.cs" />
     <Compile Include="Assets\Scripts\Slot.cs" />
+    <Compile Include="Assets\Scripts\StoryManager.cs" />
     <Compile Include="Assets\Scripts\TouchManager.cs" />
     <Compile Include="Assets\Scripts\TutorialManager.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
