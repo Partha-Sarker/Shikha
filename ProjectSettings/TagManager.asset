@@ -9,6 +9,8 @@ TagManager:
   - gunda
   - item
   - executable object
+  - backgroundImage
+  - tree
   layers:
   - Default
   - TransparentFX
@@ -19,13 +21,13 @@ TagManager:
   - 
   - 
   - Ground
+  - Box
   - 
   - 
   - 
   - 
   - 
-  - 
-  - 
+  - postprocessing
   - 
   - 
   - 

@@ -1,42 +1,61 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GamaManager : MonoBehaviour
 {
-    private Vector2 playerInitialPosition;
+    [SerializeField]
+    private Camera cam;
+    [SerializeField]
+    private Transform virtualCam;
     [SerializeField]
     private Transform player;
+    private Rigidbody2D playerRB;
+    private Vector2 playerInitialPosition;
     [SerializeField]
     private HorizontalLayoutGroup layoutGroup;
     [SerializeField]
-    private Vector2 offset;
+    private Vector2 itemDropOffset;
     [SerializeField]
     private TouchManager touchManager;
+    [SerializeField]
+    private SceneLoader sceneLoader;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-
-    }
-
-    void OnEnable()
-    {
+        playerRB = player.GetComponent<Rigidbody2D>();
         playerInitialPosition = player.transform.position;
         SetupSlot();
-        SetupPickable();        
+        SetupPickable();
+        Parallax.player = player;
+        Parallax.virtualCam = virtualCam;
+        Parallax.virtualCameraInitialPos = virtualCam.position.x;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
-            player.position = playerInitialPosition;
+        {
+            //player.position = playerInitialPosition;
+            playerRB.velocity = Vector2.zero;
+            playerRB.bodyType = RigidbodyType2D.Kinematic;
+            sceneLoader.LoadScene(SceneManager.GetActiveScene().buildIndex, "You Fell");
+
+        }
+        else if (collision.tag == "backgroundImage")
+            return;
+        else
+        {
+            Destroy(collision.gameObject);
+        }
     }
 
     private void SetupSlot()
     {
         Slot.cam = Camera.main;
         Slot.layoutGroup = layoutGroup;
-        Slot.offset = offset;
+        Slot.offset = itemDropOffset;
         Slot.player = player;
         Slot.touchManager = touchManager;
         Slot.rectTransform = layoutGroup.GetComponent<RectTransform>();

@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class PushPullTutorial : StateMachineBehaviour
 {
-    private TutorialManager tutorialManager;
+    TutorialManager tutorialManager;
+    public Sprite pushPullSprite;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         tutorialManager = FindObjectOfType<TutorialManager>();
-        tutorialManager.ChangeHeaderText("PUSH-PULL");
+        tutorialManager.ChangeHeaderImage(pushPullSprite);
         tutorialManager.DisableNextButton();
         tutorialManager.DisablePreviousButton();
         tutorialManager.ActiveBox();

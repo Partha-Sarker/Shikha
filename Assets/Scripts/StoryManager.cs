@@ -1,12 +1,23 @@
-﻿using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class StoryManager : MonoBehaviour
 {
-    public int nextSceneIndex = 1;
+    SceneLoader sceneLoader;
+    [SerializeField]
+    private string nextLevelName = "Turorial";
+    [SerializeField]
+    private int nextLevelIndex = 1;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        sceneLoader = FindObjectOfType<SceneLoader>();
+    }
 
     public void LoadNextLevel()
     {
-        SceneManager.LoadScene(nextSceneIndex);
+        sceneLoader.LoadScene(nextLevelName, "TUTORIAL");
     }
 }

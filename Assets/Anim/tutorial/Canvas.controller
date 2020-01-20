@@ -168,6 +168,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8b88a6bc497b8a429d8373c535d6860, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpSprite: {fileID: -3664099938455227263, guid: eceb00da4396493458ffcc37be7a1043,
+    type: 3}
 --- !u!1102 &-3952689300950635769
 AnimatorState:
   serializedVersion: 5
@@ -609,6 +611,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e53b977e4c52404db69e25917405cd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  walkSprite: {fileID: 7132345803303460978, guid: eceb00da4396493458ffcc37be7a1043,
+    type: 3}
 --- !u!1101 &2292189526411361486
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -725,6 +729,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf66ec78120d4aa439875d363c17557f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  crouchSprite: {fileID: -7399506988163853443, guid: eceb00da4396493458ffcc37be7a1043,
+    type: 3}
 --- !u!114 &5480146951761237635
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -737,6 +743,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 974592a32daffe24b836ad91ddf54d3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pushPullSprite: {fileID: -1298719019017402741, guid: eceb00da4396493458ffcc37be7a1043,
+    type: 3}
 --- !u!1102 &6106039460849851028
 AnimatorState:
   serializedVersion: 5

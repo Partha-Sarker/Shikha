@@ -7,14 +7,17 @@ public class TutorialManager : MonoBehaviour
 {
     public Transform player;
 
+    [SerializeField]
+    private SceneLoader sceneLoader;
+    [SerializeField]
+    private string nextSceneName = "Exploration Level";
+
     public int walkSpeed = 7;
     public int pushPullSpeed = 4;
     public int crouchSpeed = 4;
     public int jumpForce = 9;
-
-    public float walkAnimationSpeed = 1;
+    
     public float pushPullAnimationSpeed = .75f;
-    public float crouchAnimationSpeed = .75f;
 
     private Rigidbody2D playerRB;
     private Vector2 initialPlayerPosition;
@@ -24,7 +27,7 @@ public class TutorialManager : MonoBehaviour
     public Button nextButton;
     public Button previousButton;
     public Button skipButton;
-    public TextMeshProUGUI headerText;
+    public Image headerImage;
     private Vector3 initialScale;
     public GameObject box;
 
@@ -41,19 +44,21 @@ public class TutorialManager : MonoBehaviour
 
     public void WalkForward()
     {
+        Vector3 scaler = player.localScale;
+        scaler.x = 1;
+        player.localScale = scaler;
+
         playerRB.velocity = new Vector2(walkSpeed, 0);
-        playerAnimator.SetFloat("HSpeed", walkAnimationSpeed);
         playerAnimator.SetBool("isWalking", true);
     }
 
     public void WalkBackward()
     {
         Vector3 scaler = player.localScale;
-        scaler.x *= -1;
+        scaler.x = -1;
         player.localScale = scaler;
 
         playerRB.velocity = new Vector2(-walkSpeed, 0);
-        playerAnimator.SetFloat("HSpeed", walkAnimationSpeed);
         playerAnimator.SetBool("isWalking", true);
     }
 
@@ -73,19 +78,21 @@ public class TutorialManager : MonoBehaviour
 
     public void CrouchForward()
     {
+        Vector3 scaler = player.localScale;
+        scaler.x = 1;
+        player.localScale = scaler;
+
         playerRB.velocity = new Vector2(crouchSpeed, 0);
-        playerAnimator.SetFloat("HSpeed", crouchAnimationSpeed);
         playerAnimator.SetBool("isWalking", true);
     }
 
     public void CrouchBackward()
     {
         Vector3 scaler = player.localScale;
-        scaler.x *= -1;
+        scaler.x = -1;
         player.localScale = scaler;
 
         playerRB.velocity = new Vector2(-crouchSpeed, 0);
-        playerAnimator.SetFloat("HSpeed", crouchAnimationSpeed);
         playerAnimator.SetBool("isWalking", true);
     }
 
@@ -132,6 +139,8 @@ public class TutorialManager : MonoBehaviour
         playerAnimator.SetBool("isCrouching", false);
 
         box.transform.position = initialBoxPosition;
+        box.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
+        box.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
         player.position = initialPlayerPosition;
         player.localScale = initialScale;
     }
@@ -189,9 +198,9 @@ public class TutorialManager : MonoBehaviour
         playerAnimator.SetBool("isJumping", false);
     }
 
-    public void ChangeHeaderText(string text)
+    public void ChangeHeaderImage(Sprite headerSprite)
     {
-        headerText.SetText(text);
+        headerImage.sprite = headerSprite;
     }
 
     public void OnNextButtonClicked()
@@ -208,7 +217,7 @@ public class TutorialManager : MonoBehaviour
 
     public void OnSkipButtonClicked()
     {
-        SceneManager.LoadScene(1);
+        sceneLoader.LoadScene(nextSceneName, "");
     }
 
     public void DisablePreviousButton()

@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class JumpTutorial : StateMachineBehaviour
 {
+    public Sprite jumpSprite;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         TutorialManager tutorialManager = FindObjectOfType<TutorialManager>();
-        tutorialManager.ChangeHeaderText("JUMP");
+        tutorialManager.ChangeHeaderImage(jumpSprite);
         tutorialManager.DisableNextButton();
         tutorialManager.DisablePreviousButton();
     }

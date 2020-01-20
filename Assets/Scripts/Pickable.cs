@@ -22,6 +22,8 @@ public class Pickable : MonoBehaviour
     {
         if (collision.GetComponent<IExecutableObject>() != null)
         {
+            if (tempSlot == null)
+                return;
             tempSlot.executableObject = collision.GetComponent<IExecutableObject>();
         }
     }
@@ -30,6 +32,8 @@ public class Pickable : MonoBehaviour
     {
         if (collision.GetComponent<IExecutableObject>() != null)
         {
+            if (tempSlot == null)
+                return;
             tempSlot.executableObject = null;
         }
     }

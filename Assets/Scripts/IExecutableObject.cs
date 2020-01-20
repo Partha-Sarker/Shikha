@@ -1,4 +1,4 @@
 ﻿public interface IExecutableObject
 {
-    void Execute(string itemName);
+    bool Execute(string itemName);
 }

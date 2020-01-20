@@ -24,6 +24,8 @@ public class PlayerMovement : MonoBehaviour
     private TouchManager touchManager;
     public Vector2 colliderSize;
     public bool canPush = false;
+    [SerializeField]
+    private AudioSource walk1, walk2;
 
     // Start is called before the first frame update
     void Start()
@@ -199,5 +201,17 @@ public class PlayerMovement : MonoBehaviour
         transform.localScale = scaler;
     }
 
+    public void Footstep1()
+    {
+        //if (moveInput < .1 && moveInput > -.1)
+        //    return;
+        //walk1.Play();
+    }
 
+    public void Footstep2()
+    {
+        //if (moveInput < .1 && moveInput > -.1)
+        //    return;
+        //walk2.Play();
+    }
 }

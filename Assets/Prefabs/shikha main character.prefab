@@ -547,7 +547,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   touchInput: 0
-  speed: 5
+  speed: 6
   moveInput: 0
   flipDelay: 0
   airControl: 10

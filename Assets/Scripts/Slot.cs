@@ -49,11 +49,13 @@ public class Slot : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragHand
 
         if(executableObject != null)
         {
-            executableObject.Execute(transform.name);
-            Destroy(tempItem.gameObject);
-            Destroy(this.gameObject);
-            RefreshLayout();
-            return;
+            if (executableObject.Execute(transform.name))
+            {
+                Destroy(tempItem.gameObject);
+                Destroy(this.gameObject);
+                RefreshLayout();
+                return;
+            }
         }
 
         tempItem.transform.position = (Vector2)player.position + offset;
