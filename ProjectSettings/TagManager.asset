@@ -11,6 +11,8 @@ TagManager:
   - executable object
   - backgroundImage
   - tree
+  - dog
+  - light
   layers:
   - Default
   - TransparentFX
@@ -27,8 +29,8 @@ TagManager:
   - 
   - 
   - 
-  - postprocessing
   - 
+  - Dark
   - 
   - 
   - 
@@ -50,6 +52,9 @@ TagManager:
     locked: 0
   - name: Background
     uniqueID: 2914716707
+    locked: 0
+  - name: Dark
+    uniqueID: 1053937585
     locked: 0
   - name: Player
     uniqueID: 1965502505

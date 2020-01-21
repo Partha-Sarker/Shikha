@@ -233,11 +233,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Scene Loader
       objectReference: {fileID: 0}
-    - target: {fileID: 2990113682753659240, guid: 8d46b072e161c344f8ec12b78238ab9a,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2990113682753659247, guid: 8d46b072e161c344f8ec12b78238ab9a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -370,28 +365,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2990113682534909092, guid: 8d46b072e161c344f8ec12b78238ab9a,
         type: 3}
+      propertyPath: m_text
+      value: EXPLORE
+      objectReference: {fileID: 0}
+    - target: {fileID: 2990113682534909092, guid: 8d46b072e161c344f8ec12b78238ab9a,
+        type: 3}
       propertyPath: m_textInfo.characterCount
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 2990113682534909092, guid: 8d46b072e161c344f8ec12b78238ab9a,
+    - target: {fileID: 2990113681671185290, guid: 8d46b072e161c344f8ec12b78238ab9a,
         type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2990113682534909092, guid: 8d46b072e161c344f8ec12b78238ab9a,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2990113682534909092, guid: 8d46b072e161c344f8ec12b78238ab9a,
-        type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2990113682534909092, guid: 8d46b072e161c344f8ec12b78238ab9a,
-        type: 3}
-      propertyPath: m_text
-      value: EXPLORE
+      propertyPath: m_Alpha
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d46b072e161c344f8ec12b78238ab9a, type: 3}

@@ -62,18 +62,28 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\FarBuilding.cs" />
     <Compile Include="Assets\Scripts\Animation scripts\CrouchTutorial.cs" />
     <Compile Include="Assets\Scripts\Animation scripts\JumpTutorial.cs" />
     <Compile Include="Assets\Scripts\Animation scripts\MoveTutorial.cs" />
     <Compile Include="Assets\Scripts\Animation scripts\PushPullTutorial.cs" />
-    <Compile Include="Assets\Scripts\EndOfExploration.cs" />
+    <Compile Include="Assets\Scripts\Bridge.cs" />
+    <Compile Include="Assets\Scripts\BridgeObstacle.cs" />
+    <Compile Include="Assets\Scripts\City\FenceObstacle.cs" />
+    <Compile Include="Assets\Scripts\CityEnd.cs" />
+    <Compile Include="Assets\Scripts\DogAction.cs" />
+    <Compile Include="Assets\Scripts\DogObstacle.cs" />
+    <Compile Include="Assets\Scripts\Explore\EndOfExploration.cs" />
+    <Compile Include="Assets\Scripts\Explore\LearnCrouch.cs" />
+    <Compile Include="Assets\Scripts\Explore\LoadCityLevel.cs" />
     <Compile Include="Assets\Scripts\GamaManager.cs" />
+    <Compile Include="Assets\Scripts\Gate.cs" />
     <Compile Include="Assets\Scripts\GroundChecker.cs" />
     <Compile Include="Assets\Scripts\IExecutableObject.cs" />
     <Compile Include="Assets\Scripts\InfiniteParallax.cs" />
     <Compile Include="Assets\Scripts\Inventory.cs" />
     <Compile Include="Assets\Scripts\IParallaxRepeatable.cs" />
-    <Compile Include="Assets\Scripts\LoadCityLevel.cs" />
+    <Compile Include="Assets\Scripts\LightSwitch.cs" />
     <Compile Include="Assets\Scripts\NPCMovement.cs" />
     <Compile Include="Assets\Scripts\Parallax.cs" />
     <Compile Include="Assets\Scripts\ParallaxRepeater.cs" />

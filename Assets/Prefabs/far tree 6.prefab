@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7386095021798227315}
-  - component: {fileID: 1693344026798924618}
   - component: {fileID: 9039463480909125725}
   - component: {fileID: 7386095021798227314}
   - component: {fileID: 7386095021798227312}
@@ -29,32 +28,11 @@ Transform:
   m_GameObject: {fileID: 7386095021798227317}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 29.3, y: -2.7, z: 0}
-  m_LocalScale: {x: 0.7232097, y: 1.1807504, z: 1.1807504}
+  m_LocalScale: {x: 0.7232097, y: 1.7268474, z: 1.1807504}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &1693344026798924618
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7386095021798227317}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!61 &9039463480909125725
 BoxCollider2D:
   m_ObjectHideFlags: 0

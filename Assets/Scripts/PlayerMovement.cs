@@ -24,8 +24,11 @@ public class PlayerMovement : MonoBehaviour
     private TouchManager touchManager;
     public Vector2 colliderSize;
     public bool canPush = false;
+    public bool canStandup = true;
     [SerializeField]
     private AudioSource walk1, walk2;
+    [SerializeField]
+    private Collider2D normalCol, crouchCol;
 
     // Start is called before the first frame update
     void Start()
@@ -54,6 +57,12 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             animator.SetBool("isWalking", true);
+        }
+
+        if(!isGrounded && crouchCol.enabled)
+        {
+            normalCol.enabled = true;
+            crouchCol.enabled = false;
         }
 
         if (Input.GetKeyDown(KeyCode.E))
@@ -164,14 +173,20 @@ public class PlayerMovement : MonoBehaviour
             return;
         animator.SetBool("isCrouching", true);
         isCrouching = true;
+        crouchCol.enabled = true;
+        normalCol.enabled = false;
     }
 
     public void StandUp()
     {
+        if (!canStandup)
+            return;
         if (!isCrouching)
             return;
         animator.SetBool("isCrouching", false);
         isCrouching = false;
+        normalCol.enabled = true;
+        crouchCol.enabled = false;
     }
 
     public void Jump()

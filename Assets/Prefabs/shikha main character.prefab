@@ -453,6 +453,7 @@ GameObject:
   - component: {fileID: 2103325772801559312}
   - component: {fileID: 1686525307864840803}
   - component: {fileID: 5003477886944445147}
+  - component: {fileID: 7760629872690127322}
   - component: {fileID: 7868777325276196679}
   - component: {fileID: 1165398471}
   m_Layer: 0
@@ -515,6 +516,22 @@ CapsuleCollider2D:
   m_Offset: {x: 0.022109985, y: 2.4028935}
   m_Size: {x: 1.0623627, y: 4.8030863}
   m_Direction: 0
+--- !u!70 &7760629872690127322
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2973362083593377414}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: f5dc0968863888f42afacbe22076e901, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.61902523, y: 1.8836113}
+  m_Size: {x: 2.3888416, y: 3.7645218}
+  m_Direction: 0
 --- !u!95 &7868777325276196679
 Animator:
   serializedVersion: 3
@@ -561,6 +578,10 @@ MonoBehaviour:
     m_Bits: 256
   colliderSize: {x: 0.3, y: 1}
   canPush: 0
+  walk1: {fileID: 0}
+  walk2: {fileID: 0}
+  normalCol: {fileID: 5003477886944445147}
+  crouchCol: {fileID: 7760629872690127322}
 --- !u!1 &3626405822573531428
 GameObject:
   m_ObjectHideFlags: 0

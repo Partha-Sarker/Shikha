@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class NPCMovement : MonoBehaviour
 {
+    [SerializeField]
     private Rigidbody2D rb;
+    [SerializeField]
     private Animator animator;
     [SerializeField]
     private int velocity = 5;
@@ -12,12 +15,14 @@ public class NPCMovement : MonoBehaviour
     private bool facingRight = true;
     [SerializeField]
     private bool testMode = false;
+    [SerializeField]
+    private SceneLoader sceneLoader;
+    public GameObject dog;
+    public bool canCheck = true;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
+        sceneLoader = FindObjectOfType<SceneLoader>();
     }
 
     //Update is called once per frame
@@ -31,6 +36,16 @@ public class NPCMovement : MonoBehaviour
             Stop();
         if (Input.GetKeyDown(KeyCode.F))
             Flip();
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (!canCheck)
+            return;
+        if(collision.tag == "Player")
+        {
+            sceneLoader.LoadScene(SceneManager.GetActiveScene().buildIndex, "You've been bitten");
+        }
     }
 
     public void Walk()

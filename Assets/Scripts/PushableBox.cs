@@ -52,26 +52,11 @@ public class PushableBox : MonoBehaviour, IExecutableObject
 
         isGrounded = Physics2D.OverlapBox(transform.position, colliderSize, 0, whatIsGround);
 
-        //currentYVel = Math.Round(rb.velocity.y, 2);
-        //if(currentYVel < 0 && prevYVel < currentYVel)
-        //{
-        //    print(prevYVel);
-        //    if (prevYVel <= breakingVelocity)
-        //        Break();
-        //}
-        //prevYVel = currentYVel;
-
-        //if (!wasGrounded && isGrounded)
-        //{
-        //    print(rb.velocity);
-        //    if (rb.velocity.y < breakingVelocity)
-        //        Break();
-        //}
-        //wasGrounded = isGrounded;
-
         if (!isGrounded && checkPush)
         {
             playerMovement.DisableBoxJoint();
+            playerMovement.canPush = false;
+            checkPush = false;
             rb.bodyType = RigidbodyType2D.Dynamic;
         }
 
@@ -89,34 +74,6 @@ public class PushableBox : MonoBehaviour, IExecutableObject
             }
         }
     }
-
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if (collision.tag != "Player")
-    //        return;
-    //    //print("Player enters");
-    //    //playerMovement.whatIsGround ^= (boxLayerIndex << 10);
-    //    checkPush = true;
-    //    rb.bodyType = RigidbodyType2D.Static;
-    //}
-
-    //private void OnTriggerExit2D(Collider2D collision)
-    //{
-    //    if (collision.tag != "Player")
-    //        return;
-    //    //print("Player exits");
-    //    //playerMovement.whatIsGround |= (boxLayerIndex << 10);
-    //    checkPush = false;
-    //    rb.bodyType = RigidbodyType2D.Dynamic;
-    //    //DisableJoint();
-    //}
-
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if (collision.tag != "ground")
-    //        return;
-    //    isGr
-    //}
 
     private void EnableJoint()
     {
