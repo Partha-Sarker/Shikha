@@ -6,6 +6,8 @@ public class Bridge : MonoBehaviour
 {
     [SerializeField]
     private float breakingTime = 1.5f;
+    [SerializeField]
+    private float gravityScale = 2f;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -18,8 +20,10 @@ public class Bridge : MonoBehaviour
 
     private void Break()
     {
-        GetComponent<Collider2D>().enabled = false;
+        //GetComponent<Collider2D>().enabled = false;
         gameObject.AddComponent<Rigidbody2D>();
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        rb.gravityScale = gravityScale;
         Destroy(this.gameObject, 4);
     }
 }

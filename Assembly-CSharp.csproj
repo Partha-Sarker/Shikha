@@ -62,7 +62,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\FarBuilding.cs" />
     <Compile Include="Assets\Scripts\Animation scripts\CrouchTutorial.cs" />
     <Compile Include="Assets\Scripts\Animation scripts\JumpTutorial.cs" />
     <Compile Include="Assets\Scripts\Animation scripts\MoveTutorial.cs" />
@@ -76,6 +75,7 @@
     <Compile Include="Assets\Scripts\Explore\EndOfExploration.cs" />
     <Compile Include="Assets\Scripts\Explore\LearnCrouch.cs" />
     <Compile Include="Assets\Scripts\Explore\LoadCityLevel.cs" />
+    <Compile Include="Assets\Scripts\FarBuilding.cs" />
     <Compile Include="Assets\Scripts\GamaManager.cs" />
     <Compile Include="Assets\Scripts\Gate.cs" />
     <Compile Include="Assets\Scripts\GroundChecker.cs" />
