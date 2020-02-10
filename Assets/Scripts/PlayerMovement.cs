@@ -15,7 +15,6 @@ public class PlayerMovement : MonoBehaviour
     private bool facingRight = true;
     public uint airControl = 20;
     public float jumpForce = 5f;
-    [HideInInspector]
     public GameObject box;
     public bool isGrounded = true;
     public bool isPushing = false;

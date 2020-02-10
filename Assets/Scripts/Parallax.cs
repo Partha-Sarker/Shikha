@@ -31,7 +31,7 @@ public class Parallax : MonoBehaviour, IParallaxRepeatable
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void LateUpdate()
     {
         //temp = (cam.transform.position.x - cameraPos) * (1 - parallexEffect);
         dist = (virtualCam.position.x - virtualCameraInitialPos) * parallexEffect;

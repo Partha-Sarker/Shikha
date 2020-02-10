@@ -55,6 +55,7 @@ public class PushableBox : MonoBehaviour, IExecutableObject
         if (!isGrounded && checkPush)
         {
             playerMovement.DisableBoxJoint();
+            playerMovement.box = null;
             playerMovement.canPush = false;
             checkPush = false;
             rb.bodyType = RigidbodyType2D.Dynamic;

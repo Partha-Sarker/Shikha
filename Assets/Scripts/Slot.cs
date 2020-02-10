@@ -8,9 +8,9 @@ public class Slot : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragHand
     public static Camera cam;
     public static Transform player;
     public static Vector2 offset;
-    public static TouchManager touchManager;
     public static RectTransform rectTransform;
 
+    private TouchManager touchManager;
     public GameObject item;
     private GameObject tempItem;
     private Vector2 mousePos;
@@ -19,12 +19,13 @@ public class Slot : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragHand
     // Start is called before the first frame update
     void Start()
     {
+        touchManager = GameObject.FindGameObjectWithTag("manager").GetComponent<TouchManager>();
         RefreshLayout();
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        if(touchManager != null)
+        if (!GameManager.isPcInput)
             touchManager.enabled = false;
         tempItem = Instantiate(item, Input.mousePosition, Quaternion.identity);
         tempItem.name = transform.name;
@@ -61,13 +62,13 @@ public class Slot : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragHand
         tempItem.transform.position = (Vector2)player.position + offset;
 
         Destroy(this.gameObject);
-        if(touchManager != null)
-            touchManager.enabled = true;
         RefreshLayout();
     }
 
     private void RefreshLayout()
     {
+        if(!GameManager.isPcInput)
+            touchManager.enabled = true;
         layoutGroup.spacing = 1;
         layoutGroup.spacing = 0;
     }

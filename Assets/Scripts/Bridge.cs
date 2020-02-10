@@ -13,7 +13,6 @@ public class Bridge : MonoBehaviour
     {
         if (collision.transform.tag == "Player")
         {
-            print("Breaking");
             Invoke("Break", breakingTime);
         }
     }

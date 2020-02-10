@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Pickable : MonoBehaviour
 {
-    public static TouchManager touchManager;
+    private TouchManager touchManager;
     public static Transform slotUI;
 
     private string name;
@@ -15,6 +15,7 @@ public class Pickable : MonoBehaviour
     private void Start()
     {
         sprite = GetComponent<SpriteRenderer>().sprite;
+        touchManager = GameObject.FindGameObjectWithTag("manager").GetComponent<TouchManager>();
         name = transform.name;
     }
 
@@ -40,14 +41,15 @@ public class Pickable : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if(touchManager != null)
+        if(!GameManager.isPcInput)
             touchManager.enabled = false;
     }
 
     private void OnMouseUp()
     {
-        if (touchManager != null)
+        if (!GameManager.isPcInput)
             touchManager.enabled = true;
+        print(touchManager.isActiveAndEnabled);
         int childrenCount = slotUI.transform.childCount;
         if (childrenCount > 4)
         {

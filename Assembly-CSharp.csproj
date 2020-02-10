@@ -76,11 +76,12 @@
     <Compile Include="Assets\Scripts\Explore\LearnCrouch.cs" />
     <Compile Include="Assets\Scripts\Explore\LoadCityLevel.cs" />
     <Compile Include="Assets\Scripts\FarBuilding.cs" />
-    <Compile Include="Assets\Scripts\GamaManager.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Gate.cs" />
     <Compile Include="Assets\Scripts\GroundChecker.cs" />
     <Compile Include="Assets\Scripts\IExecutableObject.cs" />
     <Compile Include="Assets\Scripts\InfiniteParallax.cs" />
+    <Compile Include="Assets\Scripts\InputBroker.cs" />
     <Compile Include="Assets\Scripts\Inventory.cs" />
     <Compile Include="Assets\Scripts\IParallaxRepeatable.cs" />
     <Compile Include="Assets\Scripts\LightSwitch.cs" />

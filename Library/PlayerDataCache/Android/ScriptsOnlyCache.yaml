@@ -9,7 +9,7 @@ ScriptsOnlyBuild:
     - DogObstacle
     - FarBuilding
     - FenceObstacle
-    - GamaManager
+    - GameManager
     - Gate
     - JumpTutorial
     - LearnCrouch
@@ -127,39 +127,39 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10790}
     - Class: 114
-      Script: {instanceID: 11422}
+      Script: {instanceID: 11122}
     - Class: 114
-      Script: {instanceID: 12122}
+      Script: {instanceID: 11126}
     - Class: 114
-      Script: {instanceID: 12838}
+      Script: {instanceID: 11426}
     - Class: 114
-      Script: {instanceID: 12842}
+      Script: {instanceID: 11992}
     - Class: 114
-      Script: {instanceID: 12972}
+      Script: {instanceID: 12128}
     - Class: 114
-      Script: {instanceID: 13262}
+      Script: {instanceID: 12846}
     - Class: 114
-      Script: {instanceID: 13288}
+      Script: {instanceID: 12850}
     - Class: 114
-      Script: {instanceID: 13438}
+      Script: {instanceID: 12964}
     - Class: 114
-      Script: {instanceID: 13846}
+      Script: {instanceID: 12982}
     - Class: 114
-      Script: {instanceID: 14074}
+      Script: {instanceID: 13272}
     - Class: 114
-      Script: {instanceID: 14248}
+      Script: {instanceID: 13298}
     - Class: 114
-      Script: {instanceID: 14404}
+      Script: {instanceID: 13448}
     - Class: 114
-      Script: {instanceID: 37906}
+      Script: {instanceID: 13860}
     - Class: 114
-      Script: {instanceID: 57400}
+      Script: {instanceID: 14088}
     - Class: 114
-      Script: {instanceID: 79988}
+      Script: {instanceID: 14136}
     - Class: 114
-      Script: {instanceID: 107116}
+      Script: {instanceID: 14264}
     - Class: 114
-      Script: {instanceID: 116924}
+      Script: {instanceID: 14420}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -232,45 +232,45 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10886}
     - Class: 114
-      Script: {instanceID: 11314}
+      Script: {instanceID: 11318}
     - Class: 114
-      Script: {instanceID: 11422}
+      Script: {instanceID: 11426}
     - Class: 114
-      Script: {instanceID: 12122}
+      Script: {instanceID: 12128}
     - Class: 114
-      Script: {instanceID: 12262}
+      Script: {instanceID: 12268}
     - Class: 114
-      Script: {instanceID: 12838}
+      Script: {instanceID: 12846}
     - Class: 114
-      Script: {instanceID: 12842}
+      Script: {instanceID: 12850}
     - Class: 114
-      Script: {instanceID: 12936}
+      Script: {instanceID: 12944}
     - Class: 114
-      Script: {instanceID: 12972}
+      Script: {instanceID: 12982}
     - Class: 114
-      Script: {instanceID: 13220}
+      Script: {instanceID: 13230}
     - Class: 114
-      Script: {instanceID: 13262}
+      Script: {instanceID: 13272}
     - Class: 114
-      Script: {instanceID: 13288}
+      Script: {instanceID: 13298}
     - Class: 114
-      Script: {instanceID: 13438}
+      Script: {instanceID: 13448}
     - Class: 114
-      Script: {instanceID: 13846}
+      Script: {instanceID: 13614}
     - Class: 114
-      Script: {instanceID: 14040}
+      Script: {instanceID: 13634}
     - Class: 114
-      Script: {instanceID: 14074}
+      Script: {instanceID: 13860}
     - Class: 114
-      Script: {instanceID: 14248}
+      Script: {instanceID: 14054}
     - Class: 114
-      Script: {instanceID: 14314}
+      Script: {instanceID: 14088}
     - Class: 114
-      Script: {instanceID: 14404}
+      Script: {instanceID: 14264}
     - Class: 114
-      Script: {instanceID: 26034}
+      Script: {instanceID: 14330}
     - Class: 114
-      Script: {instanceID: 28524}
+      Script: {instanceID: 14420}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -329,27 +329,27 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10378}
     - Class: 114
-      Script: {instanceID: 11314}
+      Script: {instanceID: 11318}
     - Class: 114
-      Script: {instanceID: 11388}
+      Script: {instanceID: 11392}
     - Class: 114
-      Script: {instanceID: 12070}
+      Script: {instanceID: 12076}
     - Class: 114
-      Script: {instanceID: 12842}
+      Script: {instanceID: 12850}
     - Class: 114
-      Script: {instanceID: 12868}
+      Script: {instanceID: 12876}
     - Class: 114
-      Script: {instanceID: 13288}
+      Script: {instanceID: 13298}
     - Class: 114
-      Script: {instanceID: 13438}
+      Script: {instanceID: 13448}
     - Class: 114
-      Script: {instanceID: 13850}
+      Script: {instanceID: 13864}
     - Class: 114
-      Script: {instanceID: 14314}
+      Script: {instanceID: 14330}
     - Class: 114
-      Script: {instanceID: 14404}
+      Script: {instanceID: 14420}
     - Class: 114
-      Script: {instanceID: 81716}
+      Script: {instanceID: 48394}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -410,31 +410,31 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10912}
     - Class: 114
-      Script: {instanceID: 11314}
+      Script: {instanceID: 11318}
     - Class: 114
-      Script: {instanceID: 11998}
+      Script: {instanceID: 12004}
     - Class: 114
-      Script: {instanceID: 12262}
+      Script: {instanceID: 12268}
     - Class: 114
-      Script: {instanceID: 12298}
+      Script: {instanceID: 12304}
     - Class: 114
-      Script: {instanceID: 12352}
+      Script: {instanceID: 12358}
     - Class: 114
-      Script: {instanceID: 12842}
+      Script: {instanceID: 12850}
     - Class: 114
-      Script: {instanceID: 13150}
+      Script: {instanceID: 13160}
     - Class: 114
-      Script: {instanceID: 13162}
+      Script: {instanceID: 13172}
     - Class: 114
-      Script: {instanceID: 13288}
+      Script: {instanceID: 13298}
     - Class: 114
-      Script: {instanceID: 13438}
+      Script: {instanceID: 13448}
     - Class: 114
-      Script: {instanceID: 14040}
+      Script: {instanceID: 14054}
     - Class: 114
-      Script: {instanceID: 14314}
+      Script: {instanceID: 14330}
     - Class: 114
-      Script: {instanceID: 14404}
+      Script: {instanceID: 14420}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -800,6 +800,18 @@ ScriptsOnlyBuild:
     className: Mask
   - hash:
       serializedVersion: 2
+      Hash: 7b4a73f14b4adc7d49c6abff6ce0e9d3
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LightSwitch
+  - hash:
+      serializedVersion: 2
+      Hash: 5a5166e00845b2178c17b64913145548
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DogObstacle
+  - hash:
+      serializedVersion: 2
       Hash: caa533b001ae39b864ba8425019e2268
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -938,6 +950,12 @@ ScriptsOnlyBuild:
     className: EndOfExploration
   - hash:
       serializedVersion: 2
+      Hash: bd12787258a31484a3fdddd9e932174c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CityEnd
+  - hash:
+      serializedVersion: 2
       Hash: 85527fd82178cef38c9e32c4479d2e3e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -1050,6 +1068,12 @@ ScriptsOnlyBuild:
     assemblyName: Cinemachine.dll
     namespaceName: Cinemachine
     className: CinemachineTargetGroup
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: InputBroker
   - hash:
       serializedVersion: 2
       Hash: f050e4ebd311386367bb1906f9218b01
@@ -1184,6 +1208,12 @@ ScriptsOnlyBuild:
     className: Gate
   - hash:
       serializedVersion: 2
+      Hash: 6fcf6cac41713eeaab6db798ec588dec
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DogAction
+  - hash:
+      serializedVersion: 2
       Hash: fbf15d41ba9fdc15dc8531bea879e5ab
     assemblyName: Cinemachine.dll
     namespaceName: Cinemachine
@@ -1259,7 +1289,7 @@ ScriptsOnlyBuild:
       Hash: 425f9f17371095465226f5037aa4e447
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: GamaManager
+    className: GameManager
   - hash:
       serializedVersion: 2
       Hash: ee0cef6caaac8ae485bfa82f000f0f7b
@@ -1298,6 +1328,18 @@ ScriptsOnlyBuild:
     className: CinemachineHardLookAt
   - hash:
       serializedVersion: 2
+      Hash: ee17f626d48bb9ebc661b8a25145ac20
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Bridge
+  - hash:
+      serializedVersion: 2
+      Hash: bd12787258a31484a3fdddd9e932174c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BridgeObstacle
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -1310,7 +1352,7 @@ ScriptsOnlyBuild:
     className: Inventory
   - hash:
       serializedVersion: 2
-      Hash: ff282d2b5a2f9dfce28999110905aa5c
+      Hash: 7f96b1d0b634f8f33197dd4a526574c8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TouchManager
@@ -1362,6 +1404,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_ColorGradient
+  - hash:
+      serializedVersion: 2
+      Hash: 6ea4fbbf1525897053b708cd611c4492
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FarBuilding
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -1476,48 +1524,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: d7d6474cd0e95783ec2cf0c38cb49f48
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Bridge
-  - hash:
-      serializedVersion: 2
-      Hash: bd12787258a31484a3fdddd9e932174c
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: BridgeObstacle
-  - hash:
-      serializedVersion: 2
-      Hash: 5a5166e00845b2178c17b64913145548
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: DogObstacle
-  - hash:
-      serializedVersion: 2
-      Hash: 6fcf6cac41713eeaab6db798ec588dec
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: DogAction
-  - hash:
-      serializedVersion: 2
-      Hash: 7b4a73f14b4adc7d49c6abff6ce0e9d3
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: LightSwitch
-  - hash:
-      serializedVersion: 2
-      Hash: bd12787258a31484a3fdddd9e932174c
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: CityEnd
-  - hash:
-      serializedVersion: 2
-      Hash: 6ea4fbbf1525897053b708cd611c4492
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: FarBuilding
   platform: 13
   scenePathNames:
   - Assets/Scenes/Story.unity

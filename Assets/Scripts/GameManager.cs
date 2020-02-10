@@ -2,8 +2,9 @@
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class GamaManager : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
+    public static bool isPcInput;
     [SerializeField]
     private Camera cam;
     [SerializeField]
@@ -24,6 +25,10 @@ public class GamaManager : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        if (touchManager.gameObject.activeSelf)
+            isPcInput = false;
+        else
+            isPcInput = true;
         playerRB = player.GetComponent<Rigidbody2D>();
         playerInitialPosition = player.transform.position;
         SetupSlot();
@@ -57,13 +62,11 @@ public class GamaManager : MonoBehaviour
         Slot.layoutGroup = layoutGroup;
         Slot.offset = itemDropOffset;
         Slot.player = player;
-        Slot.touchManager = touchManager;
         Slot.rectTransform = layoutGroup.GetComponent<RectTransform>();
     }
 
     private void SetupPickable()
     {
-        Pickable.touchManager = touchManager;
         Pickable.slotUI = layoutGroup.transform;
     }
 

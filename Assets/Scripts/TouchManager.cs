@@ -9,7 +9,9 @@ public class TouchManager : MonoBehaviour
     private int deviceHeight, deviceWidth;
     [SerializeField]
     private int minMoveAmount = 10;
-    private int minSwipeAmount;
+    [Range(0f, 1f)]
+    public float swipePercent = .2f;
+    private float minSwipeAmount;
     [HideInInspector]
     public float input = 0;
     [SerializeField]
@@ -32,7 +34,7 @@ public class TouchManager : MonoBehaviour
     {
         deviceWidth = Screen.width;
         deviceHeight = Screen.height;
-        minSwipeAmount = (int) ((float) deviceHeight / 4.5f);
+        minSwipeAmount = deviceHeight * swipePercent;
         playerMovement = FindObjectOfType<PlayerMovement>();
         playerMovement.touchInput = true;
     }
