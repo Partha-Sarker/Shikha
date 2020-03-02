@@ -19,7 +19,8 @@ public class Slot : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragHand
     // Start is called before the first frame update
     void Start()
     {
-        touchManager = GameObject.FindGameObjectWithTag("manager").GetComponent<TouchManager>();
+        if(!GameManager.isPcInput)
+            touchManager = GameObject.FindGameObjectWithTag("manager").GetComponent<TouchManager>();
         RefreshLayout();
     }
 

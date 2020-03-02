@@ -15,7 +15,8 @@ public class Pickable : MonoBehaviour
     private void Start()
     {
         sprite = GetComponent<SpriteRenderer>().sprite;
-        touchManager = GameObject.FindGameObjectWithTag("manager").GetComponent<TouchManager>();
+        if(!GameManager.isPcInput)
+            touchManager = GameObject.FindGameObjectWithTag("manager").GetComponent<TouchManager>();
         name = transform.name;
     }
 
@@ -49,7 +50,6 @@ public class Pickable : MonoBehaviour
     {
         if (!GameManager.isPcInput)
             touchManager.enabled = true;
-        print(touchManager.isActiveAndEnabled);
         int childrenCount = slotUI.transform.childCount;
         if (childrenCount > 4)
         {
@@ -57,7 +57,7 @@ public class Pickable : MonoBehaviour
             return;
         }
         GameObject slotItem = Instantiate(slot);
-        slotItem.transform.parent = slotUI;
+        slotItem.transform.SetParent(slotUI, false);
         slotItem.name = name;
         slotItem.GetComponent<Image>().sprite = sprite;
         Destroy(this.gameObject);

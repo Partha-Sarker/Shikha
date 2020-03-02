@@ -20,7 +20,6 @@ public class DogAction : MonoBehaviour, IExecutableObject
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        print(collision.tag);
         if(collision.tag == "light")
         {
             dogMovement.Stop();
@@ -32,7 +31,6 @@ public class DogAction : MonoBehaviour, IExecutableObject
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        print(collision.tag);
         if (collision.tag == "light")
         {
             dogCol.enabled = true;

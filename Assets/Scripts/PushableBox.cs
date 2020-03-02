@@ -114,8 +114,8 @@ public class PushableBox : MonoBehaviour, IExecutableObject
         spriteRenderer.sortingOrder = 1;
         joint.enabled = false;
         yield return new WaitForSeconds(breakingDelay);
-        rb.bodyType = RigidbodyType2D.Static;
         rb.velocity = Vector2.zero;
+        rb.bodyType = RigidbodyType2D.Static;
         foreach (Collider2D col in cols)
             col.enabled = false;
         yield return new WaitForSeconds(disappearDelay);
