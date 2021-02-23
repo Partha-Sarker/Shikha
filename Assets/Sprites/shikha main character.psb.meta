@@ -61,6 +61,7 @@ ScriptedImporter:
     maxTextureSizeSet: 0
     compressionQualitySet: 0
     textureFormatSet: 0
+    applyGammaDecoding: 0
   spriteImportData:
   - name: 
     originalName: 
@@ -491,6 +492,7 @@ ScriptedImporter:
   importedTextureHeight: 2048
   documentSize: {x: 3043, y: 3396}
   paperDollMode: 0
+  keepDupilcateSpriteName: 0
   spriteCategoryList:
     categories: []
   textureActualWidth: 2048
@@ -673,8 +675,8 @@ ScriptedImporter:
     parts: []
     dimension: {x: 0, y: 0}
     characterGroups: []
-  boneGOs: []
   generateGOHierarchy: 0
   textureAssetName: shikha_fina(split)_charcter_final assembled
   prefabAssetName: shikha_fina(split)_charcter_final assembled_GO
-  spriteLibAssetName: 
+  spriteLibAssetName: shikha main character Sprite Lib
+  secondarySpriteTextures: []

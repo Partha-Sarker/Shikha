@@ -70,4 +70,8 @@ public class GameManager : MonoBehaviour
         Pickable.slotUI = layoutGroup.transform;
     }
 
+    public void RestartCurrentLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 }

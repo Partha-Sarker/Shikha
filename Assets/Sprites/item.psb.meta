@@ -61,6 +61,7 @@ ScriptedImporter:
     maxTextureSizeSet: 0
     compressionQualitySet: 0
     textureFormatSet: 0
+    applyGammaDecoding: 0
   spriteImportData:
   - name: 
     originalName: 
@@ -161,6 +162,7 @@ ScriptedImporter:
   importedTextureHeight: 512
   documentSize: {x: 500, y: 284}
   paperDollMode: 0
+  keepDupilcateSpriteName: 0
   spriteCategoryList:
     categories: []
   textureActualWidth: 256
@@ -196,8 +198,8 @@ ScriptedImporter:
     parts: []
     dimension: {x: 0, y: 0}
     characterGroups: []
-  boneGOs: []
   generateGOHierarchy: 0
   textureAssetName: item
   prefabAssetName: item_GO
-  spriteLibAssetName: 
+  spriteLibAssetName: item Sprite Lib
+  secondarySpriteTextures: []
